@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Input Tag</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="container" id="container">
+            <input>
+        </div>
+        
+        <script >
+           const addTag=document.getElementById("container");
+           const inputTag=document.querySelector("input");
+            
+            let  tags=[];
+           
+            function createTag(tag){
+                const tagDiv=document.createElement("div");
+                const tagSpan=document.createElement("span");
+                tagSpan.innerHtml=inputTag;
+               
+                
+                
+                tagDiv.setAttribute("class","tagDiv");
+
+                //console.log(tagInput);
+                //tagInput.setAttribute("placeholder","Enter name");
+                //tagInput.setAttribute("class","input");
+                tagDiv.appendChild(tagSpan);
+                //console.log(tag)
+                //addTag.appendChild(tag);
+                //console.log(addTag);
+                return tagDiv;
+            }
+             function adTag(e){
+                let tag;
+                if(e.key==='Enter'){
+                    tags.push(inputTag);
+                    console.log(tags[0]);
+                
+                    createTag();
+                }
+             }
+            createTag()
+            inputTag.addEventListener("keyup",adTag);
+
+        </script>
+    </body>
+    </html>

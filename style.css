@@ -1,0 +1,46 @@
+
+body{
+    height: 100vh;
+    display:flex ;
+    justify-content: center;
+    background-image: linear-gradient(#C2DFFF,#00008B);
+
+
+    
+
+}
+.container{
+    width: 300px;
+    height:200px;
+    background-color: whitesmoke;
+    box-shadow:0  4px 4px 8px rgba(13, 2, 78, 0.2);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    top:50%;
+    transform: translateY(50%);
+    
+
+}
+ul{
+    list-style-type:none;
+}
+.tag-container{
+    justify-content: center;
+    text-align: center;
+}
+input{
+    width:200px;
+    height: 30px;
+ 
+}
+input:focus{
+    border-color: #00008B;
+}
+.tagDiv{
+    height: 25px;
+    border-radius: 2px;
+    color:#00008B;
+
+}
