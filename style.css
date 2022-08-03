@@ -9,7 +9,7 @@ body{
     
 
 }
-.container{
+.main-container{
     width: 300px;
     height:200px;
     background-color: whitesmoke;
@@ -20,27 +20,56 @@ body{
     border-radius: 5px;
     top:50%;
     transform: translateY(50%);
+    padding-left:30px;
+    padding-right: 30px;
     
 
 }
-ul{
-    list-style-type:none;
-}
-.tag-container{
-    justify-content: center;
+
+
+.container{
+    display:flex;
+    flex-wrap: wrap;
     text-align: center;
+    border:1px solid black;
+    border-radius: 5px;
+    width:100%;
+    height: fit-content;
+    padding: 10px 5px 10px;
+    
+    
 }
-input{
-    width:200px;
-    height: 30px;
+
+.container span{
+    display: flex;
+    background-color:ghostwhite;
+    border: 1px rgba(0 0 0 0.4);
+    border-radius: 5px;
+    height:20px;
+    margin-left: 5px;
+}
+
+.container span img{
+    height: 10px;
+    width: 10px;
+    color: white;
+    margin:5px;
+    vertical-align: middle;
+
+}
+.container input{
+    flex:2;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding:5px;
+    margin-left: 5px;
+    width:50px;
+   
  
 }
 input:focus{
-    border-color: #00008B;
+    border-style: none;
 }
-.tagDiv{
-    height: 25px;
-    border-radius: 2px;
-    color:#00008B;
 
-}
+

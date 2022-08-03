@@ -8,49 +8,72 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         
     </head>
     <body>
-        <div class="container" id="container">
-            <input>
+        <div class="main-container" id="main-container">
+            <div class="container"  id="container">
+                <input>
+                
+
+            </div>
         </div>
         
         <script >
-           const addTag=document.getElementById("container");
-           const inputTag=document.querySelector("input");
+        
+        const tagContainer = document.getElementById('container');
+        const input = document.querySelector('.container input');
+
+        let tags = [];
+        function createTag(tag) {
             
-            let  tags=[];
-           
-            function createTag(tag){
-                const tagDiv=document.createElement("div");
-                const tagSpan=document.createElement("span");
-                tagSpan.innerHtml=inputTag;
-               
+            const span = document.createElement('span');
+            span.innerHTML = tag;
+            //console.log(span);
+            const closeIcon = document.createElement('img');
+            closeIcon.src ="icon.png";
+            closeIcon.addEventListener('click',function(e){
+                //console.log(tags.length);
+                var removeTag=this.parentNode;
+                console.log(removeTag);
+                deleteTag(removeTag)
                 
-                
-                tagDiv.setAttribute("class","tagDiv");
-
-                //console.log(tagInput);
-                //tagInput.setAttribute("placeholder","Enter name");
-                //tagInput.setAttribute("class","input");
-                tagDiv.appendChild(tagSpan);
-                //console.log(tag)
-                //addTag.appendChild(tag);
-                //console.log(addTag);
-                return tagDiv;
-            }
-             function adTag(e){
-                let tag;
-                if(e.key==='Enter'){
-                    tags.push(inputTag);
-                    console.log(tags[0]);
-                
-                    createTag();
+            
+            });
+            span.appendChild(closeIcon);
+            tagContainer.appendChild(span);
+            return span;
+        }
+        function addTags(e) {
+            
+            if(e.key=='Enter'){
+                let tag=e.target.value
+                //console.log(tag);
+                if(tag.length>1 && !tags.includes(tag)){
+                    tag.split(",").forEach(tag =>{tags.push(tag);
+                    //console.log(tags);
+                    createTag(tag);
+                    e.target.value="" ;
+                });
                 }
-             }
-            createTag()
-            inputTag.addEventListener("keyup",adTag);
+            }
 
+        }
+        function deleteTag(removeTag){
+            //document.querySelector('span').remove();
+            removeTag.remove();
+            
+            
+
+        }
+
+        input.addEventListener('keyup',addTags);
+        
+        
+ 
+
+    
         </script>
     </body>
-    </html>
+</html>
